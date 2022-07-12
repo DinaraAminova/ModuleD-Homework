@@ -20,7 +20,18 @@
 >>> Post.objects.create(author = Author.objects.get(authorUser = User.objects.get(username = 'Dina')), categoryType = 'AR',
  title = 'Новый способ  лечения Альцгеймера', text = 'Ученые обнаружили, что вакцины против гриппа снижают риск болезни Альцгеймера')
 <Post: Post object (3)>
+>>> p1 = Post.objects.get(pk=1)
+>>> p2 = Post.objects.get(pk=2)
+>>> p3 = Post.objects.get(pk=3)
+>>> c1 = Category.objects.get(name='IT')
+>>> c2 = Category.objects.get(name='Политика')
+>>> c3 = Category.objects.get(name='Спорт')
+>>> c4 = Category.objects.get(name='Наука')
+>>> p1.postCategory.add(c1)
+>>> p2.postCategory.add(c2,c4)
+>>> p3.postCategory.add(c4)
 >>>
+
 
 
 
