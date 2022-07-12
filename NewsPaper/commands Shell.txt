@@ -68,7 +68,7 @@
 >>> post = Post.objects.all().order_by("-rating")[0]
 >>> post.preview()
 >>> Post.objects.all().order_by('-rating').values('author', 'dateCreation', 'title', 'rating')[0]
->>> Comment.objects.all().order_by('-rating').values('dateCreation', 'authorUser', 'text', 'rating')[0]
+
 
 
 
