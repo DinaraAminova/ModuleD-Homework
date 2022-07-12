@@ -55,7 +55,19 @@
 >>> Comment.objects.get(pk=3).like()
 >>> Comment.objects.get(pk=3).dislike()
 >>> Comment.objects.get(pk=1).dislike()
+>>>Author.objects.get(authorUser = User.objects.get(username = 'Mike')).update_rating()
+>>> Author.objects.get(authorUser = User.objects.get(username = 'Dina')).update_rating()
+>>> a = Author.objects.get(authorUser = User.objects.get(username = 'Dina'))
+>>> a.ratingAuthor
+3
+>>> Author.objects.get(authorUser = User.objects.get(username = 'Mike')).ratingAuthor
+1
+>>>>>> best = Author.objects.all().order_by('-ratingAuthor').values('authorUser', 'ratingAuthor')[0]
+>>> print(best)
+{'authorUser': 4, 'ratingAuthor': 3}
 >>>
+
+
 
 
 
