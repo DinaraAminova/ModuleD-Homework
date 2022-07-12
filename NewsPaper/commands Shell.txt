@@ -41,7 +41,22 @@
 >>> Comment.objects.create(commentUser = User.objects.get(username = 'Mike'), commentPost = Post.objects.get(pk=1), text =
 'comment text4')
 <Comment: Mike>
+>>> Post.objects.get(pk=1).like()
+>>> Post.objects.get(pk=2).like()
+>>> Post.objects.get(pk=1).dislike()
+>>> Post.objects.get(pk=3).like()
+>>> Post.objects.get(pk=2).dislike()
+>>> Post.objects.get(pk=3).dislike()
+>>> Post.objects.get(pk=2).like()
+>>> Post.objects.get(pk=2).like()
+>>> Post.objects.get(pk=3).dislike()
+>>> Comment.objects.get(pk=1).like()
+>>> Comment.objects.get(pk=2).like()
+>>> Comment.objects.get(pk=3).like()
+>>> Comment.objects.get(pk=3).dislike()
+>>> Comment.objects.get(pk=1).dislike()
 >>>
+
 
 
 
