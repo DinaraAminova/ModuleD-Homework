@@ -5,5 +5,22 @@
 >>> user2 = User.objects.create(username = 'Dina', first_name = 'Aminova')
 >>> Author.objects.create(authorUser = user2)
 <Author: Author object (2)>
+>>>>>> Category.objects.create(name = 'Спорт')
+<Category: Category object (1)>
+>>> Category.objects.create(name = 'IT')
+<Category: Category object (2)>
+>>> Category.objects.create(name = 'Политика')
+<Category: Category object (3)>
+>>> Category.objects.create(name = 'Наука')
+<Category: Category object (4)>
+>>> Post.objects.create(author = Author.objects.get(authorUser = User.objects.get(username = 'Mike')), categoryType = 'NW', title = 'Новости политики', text = 'В Кремле не стали комментировать внеочередное заседание Госдумы 15 июля')
+<Post: Post object (1)>
+>>> Post.objects.create(author = Author.objects.get(authorUser = User.objects.get(username = 'Dina')), categoryType = 'AR', title = 'Наука не перестает удивлять', text = 'SpaceX вывела на орбиту группу спутников Starlink')
+<Post: Post object (2)>
+>>> Post.objects.create(author = Author.objects.get(authorUser = User.objects.get(username = 'Dina')), categoryType = 'AR',
+ title = 'Новый способ  лечения Альцгеймера', text = 'Ученые обнаружили, что вакцины против гриппа снижают риск болезни Альцгеймера')
+<Post: Post object (3)>
 >>>
+
+
 
