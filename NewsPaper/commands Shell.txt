@@ -30,7 +30,19 @@
 >>> p1.postCategory.add(c1)
 >>> p2.postCategory.add(c2,c4)
 >>> p3.postCategory.add(c4)
+>>> Comment.objects.create(commentUser = User.objects.get(username = 'Mike'), commentPost = Post.objects.get(pk=1), text = 'comment text1')
+<Comment: Mike>
+>>> Comment.objects.create(commentUser = User.objects.get(username = 'Dina'), commentPost = Post.objects.get(pk=2), text =
+'comment text2')
+<Comment: Dina>
+>>> Comment.objects.create(commentUser = User.objects.get(username = 'Dina'), commentPost = Post.objects.get(pk=3), text =
+'comment text3')
+<Comment: Dina>
+>>> Comment.objects.create(commentUser = User.objects.get(username = 'Mike'), commentPost = Post.objects.get(pk=1), text =
+'comment text4')
+<Comment: Mike>
 >>>
+
 
 
 
