@@ -1,1 +1,9 @@
+>>> from news.models import *
+>>> user1 = User.objects.create(username = 'Mike', first_name = 'Frank')
+>>> Author.objects.create(authorUser = user1)
+<Author: Author object (1)>
+>>> user2 = User.objects.create(username = 'Dina', first_name = 'Aminova')
+>>> Author.objects.create(authorUser = user2)
+<Author: Author object (2)>
+>>>
 
