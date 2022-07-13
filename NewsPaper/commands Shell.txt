@@ -65,9 +65,21 @@
 >>> best = Author.objects.all().order_by('-ratingAuthor').values('authorUser', 'ratingAuthor')[0]
 >>> print(best)
 {'authorUser': 4, 'ratingAuthor': 3}
+>>> best = Author.objects.all().order_by('-ratingAuthor').values('authorUser__username', 'ratingAuthor')[0]
+>>> print(best)
+{'authorUser__username': 'Dina', 'ratingAuthor': 3}
 >>> post = Post.objects.all().order_by("-rating")[0]
 >>> post.preview()
->>> Post.objects.all().order_by('-rating').values('author', 'dateCreation', 'title', 'rating')[0]
+>>> Post.objects.all().order_by('-rating').values('dateCreation', 'author__authorUser__username', 'rating', 'title')[0]
+{'dateCreation': datetime.datetime(2022, 7, 12, 10, 49, 22, 956174, tzinfo=datetime.timezone.utc), 'author__autho
+rUser__username': 'Dina', 'rating': 2, 'title': 'Наука не перестает удивлять'}
+>>> Comment.objects.all().order_by('-rating').values('commentUser__username', 'text', 'dateCreation', 'rating')[0]
+{'commentUser__username': 'Mike', 'text': 'comment text2', 'dateCreation': datetime.datetime(2022, 7, 12, 12, 19,
+ 9, 482266, tzinfo=datetime.timezone.utc), 'rating': 1}
+>>>
+
+
+
 
 
 
