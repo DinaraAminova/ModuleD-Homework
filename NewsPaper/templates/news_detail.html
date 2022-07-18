@@ -10,7 +10,7 @@
 {% block content %}
 
 <h2> {{ news_detail }} </h2> {{ news_detail.dateCreation|date:'d M Y' }} {{ news_detail.dateCreation|time:'' }}
-{{ news_detail.text|censor }}
+<br>{{ news_detail.text|censor }}
 
 
 {% endblock content %}
