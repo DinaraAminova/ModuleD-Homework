@@ -1,0 +1,24 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+<!-- Название у нас будет proudcts -->
+{% block title %}
+News
+{% endblock title %}
+
+<!-- В контенте на странице мы выводим все товары -->
+{% block content %}
+<h1>Все новости </h1>
+<h3>Новостей: {{ news|length }}</h3>
+
+    {% for news in news %}
+
+        <br><h4>{{ news.title|censor }}</h4>
+        <br>{{ news.dateCreation|date:'d M Y' }}
+        <br>{{ news.text|truncatechars:50|censor }}<hr>
+
+
+        {% endfor %}
+
+{% endblock content %}
