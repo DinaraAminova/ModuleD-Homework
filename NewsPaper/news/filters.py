@@ -9,7 +9,7 @@ class PostFilter(FilterSet):
         model = Post
         fields = {
             'author': ['exact'],
-            'title': ['icontains'],
-            'DateTime': ['gt'],
+            'dateCreation': ['exact'],
 
         }
+
