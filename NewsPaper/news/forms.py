@@ -6,4 +6,4 @@ class PostForm(ModelForm):
     check_box = BooleanField(label='Алло, Галочка!')  # добавляем галочку или же true-false поле
     class Meta:
         model = Post
-        fields = ['author', 'title', 'categoryType', 'postCategory']
+        fields = ['author', 'title', 'categoryType', 'postCategory', 'text', 'check_box']
