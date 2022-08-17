@@ -12,12 +12,13 @@ News
 <h1>Все новости </h1>
 <h3>Новостей: {{ news|length }}</h3>
 
-    {% for news in filter.qs %}
+    {% for news in news %}
     <br><h4><a href="{% url 'news_detail' news.id %}">{{ news.title|censor }}</a></h4>
-            <a href="{% url 'news_edit' news.id %}"><u>Редактировать</u></a> <!-- добавим ссылку на редактирование товара-->
-            <a href="{% url 'news_delete' news.id %}"><u> Удалить </u></a> <!-- добавим ссылку на удаление товара-->
         <br>{{ news.dateCreation|date:'d M Y' }}
-        <br>{{ news.text|truncatechars:50|censor }}<hr>
+        <br>{{ news.text|truncatechars:50|censor }}
+        <br><a href="{% url 'news_update' news.id %}"><u>Редактировать</u></a> <!-- добавим ссылку на редактирование товара-->
+        <a href="{% url 'news_delete' news.id %}"><u> Удалить </u></a> <!-- добавим ссылку на удаление товара--><hr>
+
 
 
 

@@ -16,6 +16,17 @@ Search
 </table>
 <input type="submit" value="Найти">
 
+{% for news in filter.qs %}
+    <br>{{ news.title|censor }}
+    <br>{{ news.dateCreation|date:'d M Y' }}
+    <br>{{ news.text|truncatechars:50|censor }}
+
+
+
+
+
+        {% endfor %}
+
 
 
 {% endblock content %}
