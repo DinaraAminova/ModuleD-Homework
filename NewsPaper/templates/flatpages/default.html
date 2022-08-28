@@ -1,3 +1,4 @@
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#!">Django flatpages</a>
+                <a class="navbar-brand" href="/news/">Здравствуйте, {{request.user.username}}</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -26,7 +27,12 @@
                         <li class="nav-item"><a class="nav-link" href="2">Наука</a></li>
                         <li class="nav-item"><a class="nav-link" href="7">Спорт</a></li>
                         <li class="nav-item"><a class="nav-link" href="search">Поиск</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/sign/logout/">Выйти</a></li>
+
                     </ul>
+                    {% if is_not_authors %}
+<button> <a href="sign/upgrade/"> Хочу стать автором!</a> </button>
+{% endif %}
                 </div>
             </div>
         </nav>
