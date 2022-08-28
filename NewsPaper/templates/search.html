@@ -9,12 +9,13 @@ Search
 
 <!-- В контенте на странице мы выводим все товары -->
 {% block content %}
-<table>
+
 <form method="GET">
    {{ filter.form }} <!-- Форму от фильтров за нас сделает Django. А вот кнопку, увы, придётся делать самому -->
-</form>
-</table>
 <input type="submit" value="Найти">
+</form>
+
+
 
 {% for news in filter.qs %}
     <br>{{ news.title|censor }}
