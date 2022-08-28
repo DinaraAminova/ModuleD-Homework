@@ -8,5 +8,6 @@ class PostFilter(FilterSet):
     class Meta:
         model = Post
         fields = [
-            'author', 'dateCreation']
+            'author', 'dateCreation',
+        ]
 

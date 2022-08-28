@@ -53,7 +53,7 @@ class Post(models.Model):
         return f'/news/{self.id}'
 
     def __str__(self):
-        return self.title
+        return '{}'.format(self.title)
 
     def like(self):
         self.rating += 1
